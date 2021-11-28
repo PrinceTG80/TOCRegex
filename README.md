@@ -1,4 +1,9 @@
 # TOC
+This project is TeamWork for TOC activity of 57 Tushar Gavkhare (Signup email as well as checkbox), 
+59 Tanisha Nazare (Signup Password), 63 Ketaki Mankar (Login Password), 
+18 ATharva Khonde (Login email), 9 Aditya Kumar (Signup Username)
+Guided by Amar More Sir
+Frontend is done with Teamwork
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.2.10.
 
