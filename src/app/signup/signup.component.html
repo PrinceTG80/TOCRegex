@@ -1,1 +1,74 @@
-<p>signup works!</p>
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Slide Navbar</title>
+	<!-- <link rel="stylesheet" type="text/css" href="slide navbar style.css"> -->
+<link href="https://fonts.googleapis.com/css2?family=Jost:wght@500&display=swap" rel="stylesheet">
+</head>
+<body>
+	<div class="main">  	
+		<input type="checkbox" id="chk" aria-hidden="true">
+
+			<div class="signup">
+
+				<form [formGroup]="signinform" (ngSubmit)="signIn()">
+					<label for="chk" aria-hidden="true">Sign up</label>
+					<input formControlName="fullname" type="text" name="txt" placeholder="User name" required="">
+                    <span  *ngIf="isSignSubmitted && errorControlS.fullname.errors?.required">
+                        Name is required
+                    </span>
+                    <span *ngIf="isSignSubmitted && errorControlS.fullname.errors?.pattern">
+                        Correct Name is required
+                    </span>
+					<input formControlName="email" type="email" name="email" placeholder="Email" required="">
+                    <span *ngIf="isSignSubmitted && errorControlS.email.errors?.required">
+                        Email is required
+                    </span>
+                    <span *ngIf="isSignSubmitted && errorControlS.email.errors?.pattern">
+                        Correct Email is required
+                    </span>
+					<input formControlName="password" type="password" name="pswd" placeholder="Password" required="">
+                    <span *ngIf="isSignSubmitted && errorControlS.password.errors?.required">
+                        Password is required
+                    </span>
+                    <span *ngIf="isSignSubmitted && errorControlS.password.errors?.pattern">
+                        Password with at least 8 characters (Uppercase,Lowercase,Numbers,SpecialCharacters)
+                    </span>
+                    <br>
+                    <a class = "labelx">MITAOE STUDENT                 
+                    <input
+                        mdbCheckbox
+                        type="checkbox"
+                        id="checked"
+                        value=""
+                        [checked] = "isMitaoe()">
+                    </a>                    
+					<button type ="submit">Sign up</button>
+					<div class="center"><p>Already have an account? Login</p></div>
+				</form>
+			</div>
+
+			<div class="login">
+				<form [formGroup]="loginform" (ngSubmit)="logIn()">
+					<label for="chk" aria-hidden="true">Login</label>
+					<input formControlName="email" type="email" name="email" placeholder="Email" required="">
+                    <span *ngIf="isLoginSubmitted && errorControll.email.errors?.required">
+                        Email is required
+                    </span>
+                    <span *ngIf="isLoginSubmitted && errorControll.email.errors?.pattern">
+                        Correct Email is required
+                    </span>
+					<input formControlName="password" type="password" name="pswd" placeholder="Password" required="">
+                    <span *ngIf="isLoginSubmitted && errorControll.password.errors?.required">
+                        Password is required
+                    </span>
+                    <span *ngIf="isLoginSubmitted && errorControll.password.errors?.pattern">
+                        Password with at least 8 characters (Uppercase,Lowercase,Numbers,SpecialCharacters)
+                    </span>
+					<button>Login</button>
+					<div class="center"><p id="black">Don't have an account? signup</p></div>
+				</form>
+			</div>
+	</div>
+</body>
+</html>
